@@ -27,12 +27,7 @@ D:\WORK\CODE\WPF\MCApp\obj\Debug\MCApp.pdb
 D:\GIT\MCApp\bin\Debug\MCApp.exe.config
 D:\GIT\MCApp\bin\Debug\MCApp.exe
 D:\GIT\MCApp\bin\Debug\MCApp.pdb
-D:\GIT\MCApp\bin\Debug\MaterialDesignColors.dll
-D:\GIT\MCApp\bin\Debug\MaterialDesignThemes.Wpf.dll
 D:\GIT\MCApp\bin\Debug\Microsoft.Xaml.Behaviors.dll
-D:\GIT\MCApp\bin\Debug\MaterialDesignColors.pdb
-D:\GIT\MCApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\GIT\MCApp\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\GIT\MCApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 D:\GIT\MCApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
 D:\GIT\MCApp\obj\Debug\MCApp.csproj.AssemblyReference.cache
@@ -42,7 +37,6 @@ D:\GIT\MCApp\obj\Debug\App.g.cs
 D:\GIT\MCApp\obj\Debug\MCApp_Content.g.cs
 D:\GIT\MCApp\obj\Debug\MCApp_MarkupCompile.cache
 D:\GIT\MCApp\obj\Debug\MCApp_MarkupCompile.lref
-D:\GIT\MCApp\obj\Debug\App.baml
 D:\GIT\MCApp\obj\Debug\MainWindow.baml
 D:\GIT\MCApp\obj\Debug\MCApp.g.resources
 D:\GIT\MCApp\obj\Debug\MCApp.Properties.Resources.resources
