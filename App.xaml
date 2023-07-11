@@ -1,0 +1,24 @@
+﻿<Application x:Class="MCApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MCApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--PRIMARY-->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#ababcb"/>
+            <!--ACCENT-->
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#ababcb"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
