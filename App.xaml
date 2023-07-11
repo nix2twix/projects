@@ -10,15 +10,15 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <!--PRIMARY-->
-            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#8675a9"/>
             <!--ACCENT-->
-            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#ababcb"/>
-            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#ababcb"/>
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#8675a9"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#8675a9"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

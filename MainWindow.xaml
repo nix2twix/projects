@@ -6,9 +6,178 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCApp"
         mc:Ignorable="d"
-        Title="MCApplication" Height="720" Width="1280" Icon="/office-building.png">
+        Title="MCApplication" Height="720" Width="1280" Icon="/office-building.png"
+        Loaded="Window_Loaded"
+        WindowState="Maximized">
 
-    <Grid Background="#d3d1e4">
-        <!-- -->
+    <Grid Background="#d3d1e4" Margin="0,0,-155,0">
+        <TabControl Margin="50,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TabItem Header="Редактирование списка услуг" FontFamily="Cambria Math" 
+                     Foreground="#FF342A48" Margin="20,0,0,0">
+                <Grid Background="#e8e2f0" MinHeight="500" MinWidth="1200">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="220"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="230"/>
+                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="220"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.ColumnSpan="6" Text="Добавление новой услуги" 
+                           FontSize="30" Margin="20,25,0,0" Foreground="#8675a9"
+                           HorizontalAlignment="Left"/>
+                    <TextBlock Grid.ColumnSpan="6" Grid.Row="1" Text="Удаление услуги (по номеру в базе)" 
+                           FontSize="30" Margin="20,0,0,0" Foreground="#8675a9"
+                           HorizontalAlignment="Left"/>
+                    <TextBox Grid.Column="0" Grid.Row="0" 
+                             x:Name="serviceNameTextBox"  
+                             MinWidth="180"
+                            HorizontalAlignment="Center" Margin="0,82,0,0"
+                             materialDesign:HintAssist.Hint=" Название услуги"
+                             materialDesign:HintAssist.Foreground="#8675a9"
+                             materialDesign:HintAssist.IsFloating="True"
+                             Style="{StaticResource MaterialDesignTextBox}"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top" FontFamily="Cambria Math" 
+                             Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Width="100"/>
+                    <TextBox x:Name="minCountTextBox" MinWidth="180" 
+                        HorizontalAlignment="Center" Margin="0,82,0,0"
+                             Grid.Column="1"
+                        materialDesign:HintAssist.Hint=" Мин. кол-во элементов в заказе"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="179"/>
+                    <TextBox x:Name="maxCountTextBox"  
+                        HorizontalAlignment="Center" Margin="0,165,0,0"
+                        materialDesign:HintAssist.Hint="  Макс. кол-во элементов в заказе"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="180"/>
+                    <TextBox 
+                        x:Name="measureTextBox"
+                        HorizontalAlignment="Center" Margin="0,165,0,0"
+                             Grid.Column="1" 
+                        materialDesign:HintAssist.Hint=" Ед. измерения"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="81"/>
+                    <TextBox x:Name="idMCTextBox"
+                        HorizontalAlignment="Center" Margin="0,84,0,0"
+                             Grid.Column="2"
+                        materialDesign:HintAssist.Hint=" ID управляющей компании"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" 
+                             Background="#FFE1D7EB"/>
+                    <Button Grid.Column="3" Content="Внести новую запись" MinHeight="25" MinWidth="200"
+                            HorizontalAlignment="Left" Margin="0,85,0,0" 
+                            VerticalAlignment="Top" Foreground="White" Click="ButtonInsertNewService_Click"/>
+                    <TextBox x:Name="serviceIDToDelTextBox"  MinWidth="180" 
+                        HorizontalAlignment="Center" Margin="0,62,0,0"
+                        materialDesign:HintAssist.Hint=" Номер (ID) услуги"
+                        materialDesign:HintAssist.Foreground="White"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" Grid.Row="1"
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="White" BorderBrush="#8675a9" Background="#FFA592CC" Width="100"/>
+                    <Button Grid.Column="1" Content="Удалить запись" MinHeight="25" MinWidth="200"
+                        HorizontalAlignment="Left" Margin="20,62,0,0" Grid.Row="1"
+                        VerticalAlignment="Top" Foreground="White" Click="DeleteServiceByID_Click"/>
+                    <TextBlock Grid.ColumnSpan="6"  Text="Изменение услуги" 
+                        FontSize="30" Margin="20,20,0,0" Foreground="#8675a9"
+                        HorizontalAlignment="Left"  Grid.Row="02"/>
+                    <TextBox Grid.Row="2" 
+                        x:Name="newServiceNameTextBox"  
+                        MinWidth="180"
+                        HorizontalAlignment="Center" Margin="0,141,0,0"
+                        materialDesign:HintAssist.Hint=" Новое название услуги"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Width="100"/>
+                    <TextBox x:Name="newMinCountTextBox" MinWidth="180" 
+                        HorizontalAlignment="Center" Margin="0,62,0,0"
+                        Grid.Column="1"
+                        materialDesign:HintAssist.Hint=" Мин. кол-во элементов в заказе"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="179" Grid.Row="2"/>
+                    <TextBox x:Name="newMaxCountTextBox"  
+                        HorizontalAlignment="Center" Margin="0,139,0,0"
+                        materialDesign:HintAssist.Hint=" Макс. кол-во элементов в заказе"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180"  Grid.Column="1"
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="180" Grid.Row="2"/>
+                    <TextBox 
+                        x:Name="newMeasureTextBox"
+                        HorizontalAlignment="Center" Margin="0,139,0,0"
+                        Grid.Column="2" 
+                        materialDesign:HintAssist.Hint=" Ед. измерения"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" Background="#FFE1D7EB" Height="35" Width="81" Grid.Row="2"/>
+                    <TextBox x:Name="newIDMCTextBox"
+                        HorizontalAlignment="Left"
+                        Grid.Column="2"
+                        materialDesign:HintAssist.Hint=" ID управляющей компании"
+                        materialDesign:HintAssist.Foreground="#8675a9"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" MinWidth="180" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="#FF342A48" BorderBrush="#8675a9" 
+                        Background="#FFE1D7EB" Grid.Row="2" Margin="20,62,0,0"/>
+                    <Button Grid.Column="3" Content="Изменить запись" MinHeight="25" MinWidth="200"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Foreground="White" Click="ButtonInsertNewService_Click" Grid.Row="2" Margin="0,65,0,0"/>
+                    <TextBox Grid.Row="2" 
+                        x:Name="serviceToChangeIDTextBox"  
+                        MinWidth="180"
+                        HorizontalAlignment="Center" Margin="0,62,0,0"
+                        materialDesign:HintAssist.Hint=" ID изменяемой услуги"
+                        materialDesign:HintAssist.Foreground="White"
+                        materialDesign:HintAssist.IsFloating="True"
+                        Style="{StaticResource MaterialDesignTextBox}"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" FontFamily="Cambria Math" 
+                        Foreground="White" BorderBrush="#8675a9" Width="100" Background="#FFA592CC"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Изменение цен по локациям" FontFamily="Cambria Math"
+                     Foreground="#FF342A48" Margin="0,0,20,0">
+                <Grid Background="#e8e2f0" MinHeight="500" MinWidth="1200"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
